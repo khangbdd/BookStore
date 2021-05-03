@@ -1,7 +1,8 @@
+import 'package:book_store/Splash_Activity.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Splash_Activity());
 }
 
 class MyApp extends StatelessWidget {
