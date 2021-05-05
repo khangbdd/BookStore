@@ -54,12 +54,22 @@ class _Register_ActivityState extends State<Register_Activity> {
           },
         ));
   }
-
+  bool _obscurePass = true;
   Widget _BuildPassword() {
     return Container(
         width: 340,
         child: TextFormField(
-          decoration: InputDecoration(labelText: 'Password'),
+          decoration: InputDecoration(labelText: 'Password',
+          suffixIcon: IconButton(
+            icon: Icon(_obscurePass? Icons.visibility_off: Icons.visibility),
+            onPressed: ()
+            {
+              setState(() {
+                _obscurePass = !_obscurePass;
+              });
+            },
+          )),
+          obscureText: _obscurePass,
           validator: (String value) {
             if (value.isEmpty) {
               return 'Password is required';
@@ -75,12 +85,21 @@ class _Register_ActivityState extends State<Register_Activity> {
           },
         ));
   }
-
+  bool _obscureConfirm = true;
   Widget _BuildConfirmPass() {
     return Container(
         width: 340,
         child: TextFormField(
-          decoration: InputDecoration(labelText: 'Confirm Password'),
+          decoration: InputDecoration(labelText: 'Confirm Password',
+          suffixIcon: IconButton(
+            icon: Icon(_obscureConfirm? Icons.visibility_off:Icons.visibility),
+            onPressed: () {
+              setState(() {
+                _obscureConfirm = !_obscureConfirm;
+              });
+            },
+          )),
+          obscureText: _obscureConfirm,
           validator: (String value) {
             if (value.isEmpty) {
               return 'Confirm Password is required';
