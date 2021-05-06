@@ -28,6 +28,7 @@ class _Register_ActivityState extends State<Register_Activity> {
             if (value.isEmpty) {
               return 'Name is required';
             }
+            return null;
           },
           onSaved: (String value) {
             _name = value;
@@ -48,34 +49,39 @@ class _Register_ActivityState extends State<Register_Activity> {
                 .hasMatch(value)) {
               return 'Unvalid Email';
             }
+            return null;
           },
           onSaved: (String value) {
             _email = value;
           },
         ));
   }
+
   bool _obscurePass = true;
+
   Widget _BuildPassword() {
     return Container(
         width: 340,
         child: TextFormField(
-          decoration: InputDecoration(labelText: 'Password',
-          suffixIcon: IconButton(
-            icon: Icon(_obscurePass? Icons.visibility_off: Icons.visibility),
-            onPressed: ()
-            {
-              setState(() {
-                _obscurePass = !_obscurePass;
-              });
-            },
-          )),
+          decoration: InputDecoration(
+              labelText: 'Password',
+              suffixIcon: IconButton(
+                icon: Icon(
+                    _obscurePass ? Icons.visibility_off : Icons.visibility),
+                onPressed: () {
+                  setState(() {
+                    _obscurePass = !_obscurePass;
+                  });
+                },
+              )),
           obscureText: _obscurePass,
           validator: (String value) {
             if (value.isEmpty) {
-              return 'Password is required';
+              return "Password is required";
             } else if (value.length < 6) {
-              return 'Password must longer than 6 character';
+              return "Password must longer than 6 character";
             }
+            return null;
           },
           onSaved: (String value) {
             _password = value;
@@ -85,25 +91,30 @@ class _Register_ActivityState extends State<Register_Activity> {
           },
         ));
   }
+
   bool _obscureConfirm = true;
+
   Widget _BuildConfirmPass() {
     return Container(
         width: 340,
         child: TextFormField(
-          decoration: InputDecoration(labelText: 'Confirm Password',
-          suffixIcon: IconButton(
-            icon: Icon(_obscureConfirm? Icons.visibility_off:Icons.visibility),
-            onPressed: () {
-              setState(() {
-                _obscureConfirm = !_obscureConfirm;
-              });
-            },
-          )),
+          decoration: InputDecoration(
+              labelText: 'Confirm Password',
+              suffixIcon: IconButton(
+                icon: Icon(
+                    _obscureConfirm ? Icons.visibility_off : Icons.visibility),
+                onPressed: () {
+                  setState(() {
+                    _obscureConfirm = !_obscureConfirm;
+                  });
+                },
+              )),
           obscureText: _obscureConfirm,
           validator: (String value) {
             if (value.isEmpty) {
               return 'Confirm Password is required';
             } else if (_password != value) return 'Uncorrect Pasword';
+            return null;
           },
           onSaved: (String value) {
             _confirmPassword = value;
