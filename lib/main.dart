@@ -1,9 +1,12 @@
-import 'package:book_store/Register_Activity.dart';
-import 'package:book_store/Splash_Activity.dart';
+
+import 'package:book_store/screen/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'screen/Register_Activity.dart';
+import 'screen/welcome/components/body.dart';
+
 void main() {
-  runApp(Register_Activity());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Register_Activity(),
     );
   }
 }

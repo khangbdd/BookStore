@@ -1,3 +1,5 @@
+import 'package:book_store/constraint/colors.dart';
+import 'package:book_store/constraint/dimen.dart';
 import 'package:flutter/material.dart';
 
 class Register_Activity extends StatefulWidget {
@@ -173,19 +175,11 @@ class _Register_ActivityState extends State<Register_Activity> {
                           });
                         })
                   ]),
-                  SizedBox(
-                    width: 275,
-                    height: 47,
+                  Expanded(
                     child: ElevatedButton(
-                      onPressed: () {
-                        if (!_formKey.currentState.validate()) {
-                          return;
-                        }
-                        _formKey.currentState.save();
-                      },
                       style: ButtonStyle(
                           backgroundColor:
-                              MaterialStateProperty.all(Color(0xff00A2FF)),
+                              MaterialStateProperty.all(lightBlue),
                           elevation: MaterialStateProperty.all(8),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -197,7 +191,8 @@ class _Register_ActivityState extends State<Register_Activity> {
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 14,
-                            fontFamily: 'Roboto-Regular'),
+                            fontWeight: FontWeight.normal,
+                            fontFamily: 'Roboto'),
                       ),
                     ),
                   ),
