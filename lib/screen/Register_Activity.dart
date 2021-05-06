@@ -175,8 +175,16 @@ class _Register_ActivityState extends State<Register_Activity> {
                           });
                         })
                   ]),
-                  Expanded(
+                  SizedBox(
+                    width: 300,
+                    height: 50,
                     child: ElevatedButton(
+                      onPressed: () {
+                        if (!_formKey.currentState.validate()) {
+                          return;
+                        }
+                        _formKey.currentState.save();
+                      },
                       style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(lightBlue),

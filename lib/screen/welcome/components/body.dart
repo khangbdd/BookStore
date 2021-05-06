@@ -1,5 +1,6 @@
 import 'package:book_store/constraint/colors.dart';
 import 'package:book_store/constraint/dimen.dart';
+import 'package:book_store/screen/welcome/components/button_login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -30,26 +31,7 @@ class Body extends StatelessWidget {
             SizedBox(height: 100),
             SvgPicture.asset('assets/images/img_wellcome.svg'),
             SizedBox(height: 60),
-            SizedBox(
-              height: 50,
-              width: 300,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(lightBlue),
-                    elevation: MaterialStateProperty.all(8),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ))),
-                child: Text(
-                  'Login',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontFamily: 'Roboto-Regular'),
-                ),
-              ),
-            ),
+            LoginButton()
           ],
         ),
       ),
