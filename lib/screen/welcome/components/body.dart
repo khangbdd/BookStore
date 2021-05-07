@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
             Text(
               'Welcome to Smart Book Store',
               style: TextStyle(
-                  fontSize: testMedium,
+                  fontSize: textMedium,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.bold),
             ),

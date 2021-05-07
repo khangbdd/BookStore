@@ -1,4 +1,5 @@
 
+import 'package:book_store/screen/Login/login_screen.dart';
 import 'package:book_store/screen/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: WelcomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
