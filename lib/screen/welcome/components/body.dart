@@ -31,7 +31,16 @@ class Body extends StatelessWidget {
             SizedBox(height: 100),
             SvgPicture.asset('assets/images/img_wellcome.svg'),
             SizedBox(height: 60),
-            LoginButton()
+            LoginButton(),
+            SizedBox(height: 10),
+            Text('Continue as guest',
+                style: TextStyle(
+                    fontSize: 17,
+                    color: Colors.blue,
+                    fontStyle: FontStyle.italic,
+                    decoration: TextDecoration.underline,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.normal))
           ],
         ),
       ),

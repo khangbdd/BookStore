@@ -1,4 +1,6 @@
 
+// ignore: avoid_web_libraries_in_flutter
+
 import 'package:book_store/screen/Login/login_screen.dart';
 import 'package:book_store/screen/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
