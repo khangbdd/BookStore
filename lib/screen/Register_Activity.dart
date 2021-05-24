@@ -2,12 +2,12 @@ import 'package:book_store/constraint/colors.dart';
 import 'package:book_store/constraint/dimen.dart';
 import 'package:flutter/material.dart';
 
-class Register_Activity extends StatefulWidget {
+class RegisterActivity extends StatefulWidget {
   @override
-  _Register_ActivityState createState() => _Register_ActivityState();
+  RegisterActivityState createState() => RegisterActivityState();
 }
 
-class _Register_ActivityState extends State<Register_Activity> {
+class RegisterActivityState extends State<RegisterActivity> {
   String _name;
   String _email;
   String _password;
@@ -143,8 +143,10 @@ class _Register_ActivityState extends State<Register_Activity> {
             backgroundColor: Colors.white,
           ),
           body: Form(
+
             key: _formKey,
             child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(horizontal: defaultMargin),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -157,7 +159,7 @@ class _Register_ActivityState extends State<Register_Activity> {
                   _BuildPassword(),
                   SizedBox(height: 26),
                   _BuildConfirmPass(),
-                  SizedBox(height: 64),
+                  SizedBox(height: 30),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Text('I Agree to', style: TextStyle(fontSize: 12)),
                     Text(

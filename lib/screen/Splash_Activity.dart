@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Splash_Activity extends StatelessWidget {
+class SplashActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
