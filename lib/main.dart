@@ -2,6 +2,7 @@
 import 'package:book_store/screen/Login/login_screen.dart';
 import 'package:book_store/screen/create_address/create_address_screen.dart';
 import 'package:book_store/screen/edit_address/edit_address_screen.dart';
+import 'package:book_store/screen/edit_profile/edit_profile_screen.dart';
 import 'package:book_store/screen/proflie/profile_screen.dart';
 import 'package:book_store/screen/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ProfileScreen(),
+      home: EditProfileScreen(),
     );
   }
 }
