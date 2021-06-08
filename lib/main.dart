@@ -1,9 +1,11 @@
 
 import 'package:book_store/screen/Login/login_screen.dart';
+import 'package:book_store/screen/create_address/create_address_screen.dart';
+import 'package:book_store/screen/edit_address/edit_address_screen.dart';
 import 'package:book_store/screen/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'screen/Register_Activity.dart';
+import 'screen/register/Register_Activity.dart';
 import 'screen/welcome/components/body.dart';
 
 void main() {
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      home: EditAddressScreen(),
     );
   }
 }

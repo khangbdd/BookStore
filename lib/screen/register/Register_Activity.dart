@@ -126,88 +126,95 @@ class _Register_ActivityState extends State<Register_Activity> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-              color: Colors.black,
-            ),
-            title: Text(
-              'Register',
-              style: TextStyle(
-                  color: Colors.black, fontSize: 24, fontFamily: 'Roboto-Bold'),
-            ),
-            centerTitle: true,
-            elevation: 0,
-            backgroundColor: Colors.white,
-          ),
-          body: Form(
-            key: _formKey,
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: 56),
-                  _BuildName(),
-                  SizedBox(height: 26),
-                  _BuildEmail(),
-                  SizedBox(height: 26),
-                  _BuildPassword(),
-                  SizedBox(height: 26),
-                  _BuildConfirmPass(),
-                  SizedBox(height: 64),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Text('I Agree to', style: TextStyle(fontSize: 12)),
-                    Text(
-                      ' Term and Conditions',
-                      style: TextStyle(color: Color(0xff0F52BA), fontSize: 12),
-                    ),
-                    Checkbox(
-                        value: _check,
-                        onChanged: (bool value) {
-                          setState(() {
-                            if (value == true)
-                              _check = value;
-                            else
-                              _check = value;
-                          });
-                        })
-                  ]),
-                  SizedBox(
-                    width: 300,
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (!_formKey.currentState.validate()) {
-                          return;
-                        }
-                        _formKey.currentState.save();
-                      },
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(lightBlue),
-                          elevation: MaterialStateProperty.all(8),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(14),
-                          ))),
-                      child: Text(
-                        'Sign up',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: 'Roboto'),
-                      ),
+    return Scaffold(
+          appBar: buildAppBar(),
+          body: buildForm()
+    );
+  }
+
+  AppBar buildAppBar() {
+    return AppBar(
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back),
+        color: Colors.black,
+      ),
+      title: Text(
+        'Register',
+        style: TextStyle(
+            color: Colors.black, fontSize: 24, fontFamily: 'Roboto-Bold'),
+      ),
+      centerTitle: true,
+      elevation: 0,
+      backgroundColor: Colors.white,
+    );
+  }
+
+  Form buildForm() {
+    return Form(
+          key: _formKey,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(height: 56),
+                _BuildName(),
+                SizedBox(height: 26),
+                _BuildEmail(),
+                SizedBox(height: 26),
+                _BuildPassword(),
+                SizedBox(height: 26),
+                _BuildConfirmPass(),
+                SizedBox(height: 64),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text('I Agree to', style: TextStyle(fontSize: 12)),
+                  Text(
+                    ' Term and Conditions',
+                    style: TextStyle(color: Color(0xff0F52BA), fontSize: 12),
+                  ),
+                  Checkbox(
+                      value: _check,
+                      onChanged: (bool value) {
+                        setState(() {
+                          if (value == true)
+                            _check = value;
+                          else
+                            _check = value;
+                        });
+                      })
+                ]),
+                SizedBox(
+                  width: 300,
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (!_formKey.currentState.validate()) {
+                        return;
+                      }
+                      _formKey.currentState.save();
+                    },
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(lightBlue),
+                        elevation: MaterialStateProperty.all(8),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ))),
+                    child: Text(
+                      'Sign up',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          fontFamily: 'Roboto'),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          )),
-    );
+          ),
+        );
   }
 }

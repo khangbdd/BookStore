@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class Splash_Activity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -23,6 +22,6 @@ class Splash_Activity extends StatelessWidget {
               )
             ],
           ))),
-    ));
+    );
   }
 }
