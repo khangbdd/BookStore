@@ -41,7 +41,7 @@ class CreateAddressScreen extends StatelessWidget {
         style: TextStyle(
             fontSize: 20, fontFamily: "Roboto-Bold", color: Colors.black),
       ),
-      toolbarHeight: 100,
+      toolbarHeight: 80,
     );
   }
 }

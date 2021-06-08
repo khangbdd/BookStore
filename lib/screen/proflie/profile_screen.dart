@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'Components/FillInfo.dart';
 
-class EditAddressScreen extends StatelessWidget {
-  const EditAddressScreen({Key key}) : super(key: key);
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class EditAddressScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 40,
+                height: 30,
               ),
               FillInfo()
             ],
@@ -37,7 +37,7 @@ class EditAddressScreen extends StatelessWidget {
       ),
       centerTitle: true,
       title: Text(
-        "Edit Address",
+        "Profile",
         style: TextStyle(
             fontSize: 20, fontFamily: "Roboto-Bold", color: Colors.black),
       ),

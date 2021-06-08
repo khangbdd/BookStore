@@ -12,16 +12,16 @@ class FillInfo extends StatefulWidget {
 class _FillInfoState extends State<FillInfo> {
 
   final TextEditingController nameControler = TextEditingController();
-  final TextEditingController phoneNumberControler = TextEditingController();
+  final TextEditingController birthdayControler = TextEditingController();
   final TextEditingController addressLaneControler = TextEditingController();
-  final TextEditingController districtControler = TextEditingController();
+  final TextEditingController emailControler = TextEditingController();
   final TextEditingController cityControler = TextEditingController();
-  final TextEditingController postalCodeControler = TextEditingController();
+  final TextEditingController phoneNumbersControler = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -38,6 +38,34 @@ class _FillInfoState extends State<FillInfo> {
             ),
             SizedBox(height: 10),
             Text(
+              "Birthday",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16),
+            ),
+            TextField(
+              controller: birthdayControler,
+              keyboardType: TextInputType.datetime,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Email",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16),
+            ),
+            TextField(
+              controller: emailControler,
+              keyboardType: TextInputType.emailAddress,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
               "Phone Numbers",
               style: TextStyle(
                   color: Colors.black,
@@ -45,8 +73,8 @@ class _FillInfoState extends State<FillInfo> {
                   fontSize: 16),
             ),
             TextField(
-              controller: phoneNumberControler,
-              keyboardType: TextInputType.emailAddress,
+              controller: phoneNumbersControler,
+              keyboardType: TextInputType.text,
             ),
             SizedBox(
               height: 10,
@@ -66,20 +94,6 @@ class _FillInfoState extends State<FillInfo> {
               height: 10,
             ),
             Text(
-              "District",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16),
-            ),
-            TextField(
-              controller: districtControler,
-              keyboardType: TextInputType.text,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
               "City",
               style: TextStyle(
                   color: Colors.black,
@@ -88,20 +102,6 @@ class _FillInfoState extends State<FillInfo> {
             ),
             TextField(
               controller: cityControler,
-              keyboardType: TextInputType.text,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Postal Code",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16),
-            ),
-            TextField(
-              controller: postalCodeControler,
               keyboardType: TextInputType.text,
             ),
             SizedBox(
@@ -115,12 +115,13 @@ class _FillInfoState extends State<FillInfo> {
                 child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
+                      primary: Color(0xff00A2FF),
                         shape: const RoundedRectangleBorder(
                             borderRadius: const BorderRadius.all(
                                 Radius.circular(10)))),
                     child: Container(
                       child: Text(
-                        "ADD ADDRESS",
+                        "EDIT",
                         style: TextStyle(
                             fontSize: 14,
                             fontFamily: "Roboto-Bold",

@@ -13,7 +13,7 @@ class _FillInfoState extends State<FillInfo> {
 
   final TextEditingController nameControler = TextEditingController();
   final TextEditingController phoneNumberControler = TextEditingController();
-  final TextEditingController addressLinesControler = TextEditingController();
+  final TextEditingController addressLaneControler = TextEditingController();
   final TextEditingController districtControler = TextEditingController();
   final TextEditingController cityControler = TextEditingController();
   final TextEditingController postalCodeControler = TextEditingController();
@@ -55,14 +55,14 @@ class _FillInfoState extends State<FillInfo> {
               height: 10,
             ),
             Text(
-              "Address Line",
+              "Address Lane",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
                   fontSize: 16),
             ),
             TextField(
-              controller: addressLinesControler,
+              controller: addressLaneControler,
               keyboardType: TextInputType.text,
             ),
             SizedBox(
@@ -111,27 +111,54 @@ class _FillInfoState extends State<FillInfo> {
               height: 60,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
-              child: SizedBox(
-                width: 300,
-                height: 40,
-                child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: const BorderRadius.all(
-                                Radius.circular(10)))),
-                    child: Container(
-                      child: Text(
-                        "ADD ADDRESS",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontFamily: "Roboto-Bold",
-                            fontWeight: FontWeight.w600),
-                      ),
-                    )),
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children:[
+                    SizedBox(
+                      width: 150,
+                      height: 40,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            primary: Color(0xffFFFFFF),
+                            shape: const RoundedRectangleBorder(
+                              side: BorderSide(color: Color(0xffDC3545)),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(10)))),
+                        child: Container(
+                          child: Text(
+                            "DELETE",
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: Color(0xffFF0000),
+                                fontFamily: "Roboto-Bold",
+                                fontWeight: FontWeight.w600),
+                          ),
+                        )),
+                    ),
+                    SizedBox(
+                      height: 40,
+                      width: 150,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xff28A745),
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(10)))),
+                        child: Container(
+                          child: Text(
+                            "ADD",
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: "Roboto-Bold",
+                                fontWeight: FontWeight.w600),
+                          ),
+                        )),
+                    ),
+               ]),
               ),
-            )
           ],
         ));
   }
