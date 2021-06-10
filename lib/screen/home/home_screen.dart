@@ -1,6 +1,9 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'Components/ads_card.dart';
+import 'Components/header.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -8,39 +11,84 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
-        children: [
-          IconButton(icon: Icon(Icons.menu), onPressed: () {}),
-          Expanded(
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Search Books",
-                fillColor: Colors.white,
-                filled: true,
-                hintStyle: TextStyle(
-                  fontFamily: "Roboto-Bold",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w800,
-                ),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                ),
-                suffix:InkWell(
-                  onTap: () {},
-                  child: Container(
-                    padding: EdgeInsets.all(16 * 0.75),
-                    margin: EdgeInsets.symmetric(horizontal: 8),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: const BorderRadius.all(Radius.circular(10))),
-                    child: SvgPicture.asset("assets/icons/Search.png"),
-                  ),
-                )
-              ),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(top: 10),
+          child: Container(
+              child: Column(children: [
+            Header(),
+            SizedBox(
+              height: 20,
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: AdsCard(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Container(
+                child: Column(children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Categories",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontFamily: "Roboto-Bold",
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "See all",
+                            style: TextStyle(
+                                color: Color(0xff656565),
+                                fontFamily: "Roboto-Regular",
+                                fontSize: 14),
+                          ))
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                    Container(
+                      height: 80,
+                      child: GridView.builder(
+                        padding: EdgeInsets.symmetric(horizontal: 15),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1,
+                        mainAxisSpacing: 8,
+                        childAspectRatio: 1.754),
+                        itemCount: 6,
+                        physics: ScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, index) {
+                          return GridTile(
+                                child: Container(
+                                  child: Stack(
+                                    children: [
+                                      Image.asset("assets/images/categrory.png"),
+                                      Text(
+                                        "Biog",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: "Roboto-Bold",
+                                            fontSize: 14),
+                                      )
+                                    ],
+                                  ),
+                                ));
+                        },
+                  ),
+                    )
+                ]),
+              ),
+            )
+          ])),
+        ),
       ),
     );
   }

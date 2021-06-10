@@ -56,7 +56,11 @@ flutter:
     - assets/images/img_login.svg
     - assets/images/bookCover.png
     - assets/images/ICON-StarFill.png
-    - assets/images/Search.png
+    - assets/images/search.svg
+    - assets/images/cart.svg
+    - assets/images/ads.png
+    - assets/images/categrory.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

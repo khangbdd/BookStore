@@ -28,7 +28,7 @@ class CreateAddressScreen extends StatelessWidget {
 
   AppBar _buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffFAFAFA),
       elevation: 0,
       leading: IconButton(
         icon: Icon(Icons.arrow_back),
