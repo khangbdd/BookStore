@@ -1,5 +1,7 @@
 
 import 'package:book_store/screen/Login/login_screen.dart';
+import 'package:book_store/screen/cart/cart_screen.dart';
+import 'package:book_store/screen/checkout/checkout_screen.dart';
 import 'package:book_store/screen/create_address/create_address_screen.dart';
 import 'package:book_store/screen/edit_address/edit_address_screen.dart';
 import 'package:book_store/screen/edit_profile/edit_profile_screen.dart';
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: CartScreen(),
     );
   }
 }
