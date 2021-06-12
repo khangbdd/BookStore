@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Components/checkout_card.dart';
+import 'Components/verify_form.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({Key key}) : super(key: key);
@@ -49,7 +50,17 @@ class CheckoutScreen extends StatelessWidget {
                 width: 400,
                 height: 45,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet<void>(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25))
+                        ),
+                        context: context,
+                        builder: (BuildContext context) {
+                          return VerifyForm();
+                        }
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                         primary: Color(0xff28A745),
                         shape: RoundedRectangleBorder(
@@ -89,5 +100,4 @@ class CheckoutScreen extends StatelessWidget {
     );
   }
 }
-
 
