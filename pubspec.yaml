@@ -61,6 +61,7 @@ flutter:
     - assets/images/ads.png
     - assets/images/categrory.png
     - assets/images/BookCoverTrump.png
+    - assets/images/Category-1.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
