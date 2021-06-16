@@ -13,17 +13,18 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  List<CartBookInfo> lstBookCart = [
+      CartBookInfo("Eleanor and Park", "By rainbow rowell", 10000, 4),
+      CartBookInfo("Eleanor and Park1", "By rainbow rowell1", 20000, 15),
+      CartBookInfo("Eleanor and Park2", "By rainbow rowell2", 30000, 25),
+      CartBookInfo("Eleanor and Park3", "By rainbow rowell3", 40000, 35),
+      CartBookInfo("Eleanor and Park4", "By rainbow rowell4", 50000, 45),
+      CartBookInfo("Eleanor and Park5", "By rainbow rowell5", 60000, 46),
+      CartBookInfo("Eleanor and Park6", "By rainbow rowell6", 70000, 47),
+      CartBookInfo("Eleanor and Park7", "By rainbow rowell7", 80000, 49)];
   @override
   Widget build(BuildContext context) {
-    List<CartBookInfo> lstBookCart = List<CartBookInfo>();
-    lstBookCart.add(CartBookInfo("Eleanor and Park", "By rainbow rowell", 10000, 4));
-    lstBookCart.add(CartBookInfo("Eleanor and Park1", "By rainbow rowell1", 20000, 15));
-    lstBookCart.add(CartBookInfo("Eleanor and Park2", "By rainbow rowell2", 30000, 25));
-    lstBookCart.add(CartBookInfo("Eleanor and Park3", "By rainbow rowell3", 40000, 35));
-    lstBookCart.add(CartBookInfo("Eleanor and Park4", "By rainbow rowell4", 50000, 45));
-    lstBookCart.add(CartBookInfo("Eleanor and Park5", "By rainbow rowell5", 60000, 46));
-    lstBookCart.add(CartBookInfo("Eleanor and Park6", "By rainbow rowell6", 70000, 47));
-    lstBookCart.add(CartBookInfo("Eleanor and Park7", "By rainbow rowell7", 80000, 49));
+
     return Scaffold(
       backgroundColor: Color(0xffF5F6F7),
       appBar: _buildAppBar(),
@@ -43,13 +44,14 @@ class _CartScreenState extends State<CartScreen> {
                     separatorBuilder: (BuildContext context, index) {return SizedBox(height: 10,);},
                     itemBuilder: (BuildContext context, index) {
                       return Dismissible(
-                        background: Container(color: Colors.redAccent,),
+                        direction: DismissDirection.startToEnd,
+                        background: Container(decoration: BoxDecoration(color: Colors.redAccent,borderRadius: const BorderRadius.all(Radius.circular(10)))),
                           key: UniqueKey(),
                           child: CartCard(cartBook: lstBookCart[index],),
                       onDismissed: (direction) {
-                            setState(() {
+                          setState(() {
                             lstBookCart.removeAt(index);
-                            });
+                          });
                       },);
                     }),
               ),

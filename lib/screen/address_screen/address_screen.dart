@@ -1,11 +1,33 @@
+import 'package:book_store/Class/AddressCardInfo.dart';
+import 'package:book_store/screen/address_screen/Components/address_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AddressScreen extends StatelessWidget {
+class AddressScreen extends StatefulWidget {
   const AddressScreen({Key key}) : super(key: key);
 
   @override
+  _AddressScreenState createState() => _AddressScreenState();
+}
+
+class _AddressScreenState extends State<AddressScreen> {
+
+  List<AddressCardInfo> lstAddressCard = [AddressCardInfo("Bùi Dương Duy Khang", "0933171801",
+  "KTX khu B", "Đông Hòa", "Bình Dương", true),
+  AddressCardInfo("Bùi Dương Duy Khang1", "0933171801",
+  "KTX khu B", "Đông Hòa", "Bình Dương", false),
+  AddressCardInfo("Bùi Dương Duy Khang2", "0933171801",
+  "KTX khu B", "Đông Hòa", "Bình Dương", false),
+  AddressCardInfo("Bùi Dương Duy Khang3", "0933171801",
+  "KTX khu B", "Đông Hòa", "Bình Dương", false),
+  AddressCardInfo("Bùi Dương Duy Khang4", "0933171801",
+  "KTX khu B", "Đông Hòa", "Bình Dương", false),
+  AddressCardInfo("Bùi Dương Duy Khang5", "0933171801",
+  "KTX khu B", "Đông Hòa", "Bình Dương", false),];
+
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: _buildAppBar(),
       body: Padding(
@@ -32,86 +54,52 @@ class AddressScreen extends StatelessWidget {
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       itemBuilder: (BuildContext context, index) {
-                        return Center(
-                          child: Container(
-                            padding:
-                                EdgeInsets.only(left: 15, top: 15, bottom: 10),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(18)),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.2),
-                                  spreadRadius: 2,
-                                  blurRadius: 1,
-                                  offset:
-                                      Offset(0, 0), // changes position of shadow
-                                ),
-                              ],
-                            ),
-                            child: Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Bùi Dương Duy Khang",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13,
-                                          fontFamily: "Roboto-Regular"),
-                                    ),
-                                    Text(
-                                      "0933171801",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13,
-                                          fontFamily: "Roboto-Regular"),
-                                    ),
-                                    Text(
-                                      "KTX khu B, Phường đông hòa",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13,
-                                          fontFamily: "Roboto-Regular"),
-                                    ),
-                                    Text(
-                                      "thị xã dĩ an",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13,
-                                          fontFamily: "Roboto-Regular"),
-                                    ),
-                                    Text(
-                                      "Bình Dương",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 13,
-                                          fontFamily: "Roboto-Regular"),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 50, left: 110),
-                                  child: Checkbox(
-                                    value: true,
-                                    onChanged: (bool) {},
-                                    shape: CircleBorder(),
-                                    checkColor: Color(0xff0F52BA),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        );
+                        return Dismissible(
+                          direction: DismissDirection.startToEnd,
+                            key: UniqueKey(),
+                            background: Container(decoration: BoxDecoration(color: Colors.redAccent,borderRadius: const BorderRadius.all(Radius.circular(10)))),
+                            onDismissed: (direction) {
+                                lstAddressCard.removeAt(index);
+                            },
+                            child: AddressItem(
+                              addressCardInfo: lstAddressCard[index],
+                            ));
                       },
                       separatorBuilder: (BuildContext context, index) {
                         return SizedBox(
-                          height: 10,
+                          height: 2,
                         );
                       },
-                      itemCount: 4),
+                      itemCount: lstAddressCard.length),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 170),
+                child: SizedBox(
+                  height: 45,
+                  width: 400,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(18)))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 70.0),
+                            child: Text(
+                              "CONTINUE WITH PAYMENT",
+                              style: TextStyle(
+                                  fontFamily: "Roboto-Bold",
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 15),
+                            ),
+                          ),
+                          Image.asset("assets/images/continueIcon.png")
+                        ],
+                      )),
                 ),
               )
             ],

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CartBookInfo {
-  const CartBookInfo(@required this.title,
-      @required this.author,
-      @required this.price,
-      @required this.quantity);
+  const CartBookInfo(this.title,
+      this.author,
+      this.price,
+      this.quantity);
 
   final String title;
   final String author;
