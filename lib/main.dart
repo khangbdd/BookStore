@@ -10,6 +10,7 @@ import 'package:book_store/screen/edit_profile/edit_profile_screen.dart';
 import 'package:book_store/screen/home/home_screen.dart';
 import 'package:book_store/screen/proflie/profile_screen.dart';
 import 'package:book_store/screen/search_category/search_category_screen.dart';
+import 'package:book_store/screen/splash/Splash_Activity.dart';
 import 'package:book_store/screen/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
