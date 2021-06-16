@@ -30,7 +30,8 @@ class CheckoutScreen extends StatelessWidget {
             ),
             SingleChildScrollView(
               child: Container(
-                height: 514,
+
+                height: 530,
                 child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,

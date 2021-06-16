@@ -14,6 +14,7 @@ class _CheckoutCardState extends State<CheckoutCard> {
   @override
   Widget build(BuildContext context) {
     return Center(
+
       child: InkWell(
         splashColor: Color(0xff00A2FF).withOpacity(0.2),
         onTap: () {
@@ -34,6 +35,7 @@ class _CheckoutCardState extends State<CheckoutCard> {
               color: Color(0xffffffff),
               borderRadius: const BorderRadius.all(Radius.circular(10))),
           child: Row(
+
             children: [
               Image.asset("assets/images/BookCoverTrump.png"),
               Column(
@@ -58,7 +60,7 @@ class _CheckoutCardState extends State<CheckoutCard> {
                         fontFamily: "Roboto-Regular"),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 8),
+                    padding: const EdgeInsets.only(top: 5),
                     child: Row(
                       children: [
                         Text(
@@ -123,7 +125,7 @@ class _CheckoutCardState extends State<CheckoutCard> {
               Column(
                 children:[
                   Padding(
-                    padding: EdgeInsets.only(left: 60),
+                    padding: EdgeInsets.only(left: 10),
                     child: Checkbox(
                       key: Key("cbIsCheckFofBuy"),
                       value: isCheck,
@@ -137,7 +139,7 @@ class _CheckoutCardState extends State<CheckoutCard> {
                     ),
                   ),
                   Padding(
-                  padding: const EdgeInsets.only(left: 25, top: 32),
+                  padding: const EdgeInsets.only(left: 10, top: 32),
                   child: Text(
                     "đ200000",
                     style: TextStyle(
